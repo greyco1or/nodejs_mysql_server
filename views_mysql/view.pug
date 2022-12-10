@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        h1 
+            a(href="/topic") Server side Javascript
+        ul
+            each topic in topics
+                li
+                    a(href="/topic/"+topic.id)= topic.title
+        article 
+            if topic
+                h2= topic.title 
+                =topic.description
+                div= "Author: " + topic.author
+            else 
+                h2 Welcome
+                | This is a server side javascript tutorial.
+        ul 
+            li
+                a(href="/topic/add") Add new Post
+            if topic 
+            li 
+                a(href="/topic/"+topic.id+"/edit") edit

@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        h1 
+            a(href="/topic") Server side Javascript
+        ul
+            each topic in topics
+                li
+                    a(href="/topic/"+topic.id)= topic.title
+        article 
+            form(action="/topic/add", method="post")
+                p
+                    input(type="text" name="title" placeholder="title") 
+                p 
+                    textarea(name="description" placeholder="description")
+                p 
+                    textarea(type="text" name="author" placeholder="author")
+                p
+                    input(type="submit")
